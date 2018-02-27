@@ -1,0 +1,63 @@
+
+
+
+- name: install epel-release (CentOS)
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - epel-release
+    - yum-utils
+
+- name: install remi-release rpm
+  yum:
+    name: "http://rpms.remirepo.net/enterprise/remi-release-{{ ansible_distribution_major_version }}.rpm"
+    state: present
+
+- name: install epel-release-latest-noarch rpm
+  yum:
+    name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
+    state: present
+
+- name: "yum-config-manager --enable remi-php"
+  command: "yum-config-manager --enable remi-php{{ php_version | replace('.', '') }}"
+  args:
+    creates: /etc/ansible_installed_centos_php
+  register: yum_config_manager
+
+- name: Install php {{ php_version }}
+  yum: name={{ item }} state=present update_cache=yes
+  with_items:
+    - php
+    - php-cli
+    - php-cgi
+    - php-mysql
+    - php-gd
+    - php-curl
+    - php-mbstring
+    - php-pgsql
+    - php-sqlite3
+    - php-memcached
+    - php-imap
+    - php-xml
+    - php-zip
+    - php-bcmath
+    - php-soap
+    - php-intl
+    - php-readline
+    - php-imagick
+    - php-json
+    - php-ldap
+    - php-odbc
+    - php-pear
+    - php-xmlrpc
+    - php-snmp
+    - php-mcrypt
+    - php-fpm
+
+- name: create /etc/ansible_installed_centos_php
+  file:
+    path: /etc/ansible_installed_centos_php
+    state: touch
+  when: yum_config_manager.changed

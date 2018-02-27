@@ -1,0 +1,11 @@
+/var/log/phpfpm_slow.log {
+        rotate 12
+        weekly
+        missingok
+        notifempty
+        compress
+        delaycompress
+        postrotate
+                /usr/lib/php/php{{ php_version }}-fpm-reopenlogs
+        endscript
+}

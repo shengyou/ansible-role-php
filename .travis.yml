@@ -8,6 +8,8 @@ env:
   - distro: centos7
   - distro: ubuntu1404
   - distro: ubuntu1604
+  - distro: centos7
+    playbook: test_56.yml
 
 script:
   # Configure test script so we can run extra tests after playbook is run.

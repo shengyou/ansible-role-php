@@ -15,8 +15,10 @@ Requirements
 Role Variables
 --------------
 
-* php_version: 7.2
-預設值為 7.0，可以設置 5.6, 7.0, 7.1, 7.2。
+`php_version` 預設值為 7.0，可以設置 5.6, 7.0, 7.1, 7.2。
+
+* php_version:
+
 
 以下 Variables 非必填項目，想要設定自訂的 config 才需要設置。
 

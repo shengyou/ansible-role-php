@@ -7,7 +7,7 @@
   tags:
     - install
 
-# - include_tasks: "{{ ansible_distribution }}-setup.yml"
-#   when: ansible_distribution == "Ubuntu" or ansible_distribution == "CentOS"
-#   tags:
-#     - setup
+- include_tasks: "{{ ansible_distribution }}-setup.yml"
+  when: ansible_distribution == "Ubuntu" or ansible_distribution == "CentOS"
+  tags:
+    - setup

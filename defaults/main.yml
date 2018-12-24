@@ -1,1 +1,56 @@
 php_version: 7.0
+
+apt_install_php_packages:
+  - "php{{ php_version }}-dev"
+  - "php{{ php_version }}-cli"
+  - "php{{ php_version }}-cgi"
+  - "php{{ php_version }}-mysql"
+  - "php{{ php_version }}-gd"
+  - "php{{ php_version }}-curl"
+  - "php{{ php_version }}-mbstring"
+  - "php{{ php_version }}-pgsql"
+  - "php{{ php_version }}-sqlite3"
+  - "php{{ php_version }}-memcached"
+  - "php{{ php_version }}-imap"
+  - "php{{ php_version }}-xml"
+  - "php{{ php_version }}-zip"
+  - "php{{ php_version }}-bcmath"
+  - "php{{ php_version }}-soap"
+  - "php{{ php_version }}-intl"
+  - "php{{ php_version }}-readline"
+  - "php{{ php_version }}-imagick"
+  - "php{{ php_version }}-json"
+  - "php{{ php_version }}-ldap"
+  - "php{{ php_version }}-odbc"
+  - php-pear
+  - "php{{ php_version }}-xmlrpc"
+  - "php{{ php_version }}-snmp"
+  - "php{{ php_version }}-fpm"
+
+yum_install_php_packages:
+  - php
+  - php-cli
+  - php-cgi
+  - php-mysql
+  - php-gd
+  - php-curl
+  - php-mbstring
+  - php-pgsql
+  - php-sqlite3
+  - php-memcached
+  - php-imap
+  - php-xml
+  - php-zip
+  - php-bcmath
+  - php-soap
+  - php-intl
+  - php-readline
+  - php-imagick
+  - php-json
+  - php-ldap
+  - php-odbc
+  - php-pear
+  - php-xmlrpc
+  - php-snmp
+  - php-mcrypt
+  - php-fpm

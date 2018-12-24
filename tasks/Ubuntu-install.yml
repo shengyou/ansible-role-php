@@ -10,33 +10,7 @@
     # LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
 
 - name: Install php {{ php_version }}
-  apt: name={{ item }} state=present update_cache=yes
-  with_items:
-    - "php{{ php_version }}-dev"
-    - "php{{ php_version }}-cli"
-    - "php{{ php_version }}-cgi"
-    - "php{{ php_version }}-mysql"
-    - "php{{ php_version }}-gd"
-    - "php{{ php_version }}-curl"
-    - "php{{ php_version }}-mbstring"
-    - "php{{ php_version }}-pgsql"
-    - "php{{ php_version }}-sqlite3"
-    - "php{{ php_version }}-memcached"
-    - "php{{ php_version }}-imap"
-    - "php{{ php_version }}-xml"
-    - "php{{ php_version }}-zip"
-    - "php{{ php_version }}-bcmath"
-    - "php{{ php_version }}-soap"
-    - "php{{ php_version }}-intl"
-    - "php{{ php_version }}-readline"
-    - "php{{ php_version }}-imagick"
-    - "php{{ php_version }}-json"
-    - "php{{ php_version }}-ldap"
-    - "php{{ php_version }}-odbc"
-    - php-pear
-    - "php{{ php_version }}-xmlrpc"
-    - "php{{ php_version }}-snmp"
-    - "php{{ php_version }}-fpm"
+  apt: name={{ apt_install_php_packages }} state=present update_cache=yes    
 
 - name: Install php-mcrypt
   apt:

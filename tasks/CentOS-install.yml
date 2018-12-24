@@ -27,34 +27,7 @@
   register: yum_config_manager
 
 - name: Install php {{ php_version }}
-  yum: name={{ item }} state=present update_cache=yes
-  with_items:
-    - php
-    - php-cli
-    - php-cgi
-    - php-mysql
-    - php-gd
-    - php-curl
-    - php-mbstring
-    - php-pgsql
-    - php-sqlite3
-    - php-memcached
-    - php-imap
-    - php-xml
-    - php-zip
-    - php-bcmath
-    - php-soap
-    - php-intl
-    - php-readline
-    - php-imagick
-    - php-json
-    - php-ldap
-    - php-odbc
-    - php-pear
-    - php-xmlrpc
-    - php-snmp
-    - php-mcrypt
-    - php-fpm
+  yum: name={{ yum_install_php_packages }} state=present update_cache=yes
 
 - name: create /etc/ansible_installed_centos_php
   file:

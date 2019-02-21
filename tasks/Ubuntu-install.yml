@@ -10,7 +10,7 @@
     # LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
 
 - name: Install php {{ php_version }}
-  apt: name={{ apt_install_php_packages }} state=present update_cache=yes    
+  apt: name={{ apt_install_php_packages }} state=present update_cache=yes
 
 - name: Install php-mcrypt
   apt:
